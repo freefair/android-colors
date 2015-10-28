@@ -8,23 +8,12 @@ buildscript {
     }
 }
 
-def lastTag = 'git describe --abbrev=0 --tags'.execute([],rootProject.projectDir).text.trim()
-def currentTag = 'git tag --points-at HEAD'.execute([],rootProject.projectDir).text.trim()
-
-def tempVersion = lastTag + '-SNAPSHOT'
-
-if(hasProperty('version') && !'unspecified'.equals(version)) {
-    tempVersion = version
-} else if (lastTag.equals(currentTag)){
-    tempVersion = currentTag
-}
-
 allprojects {
     repositories {
         jcenter()
     }
     group = 'io.freefair'
-    version = tempVersion
+    apply from: 'https://gist.githubusercontent.com/larsgrefer/30b36bd74b162631f143/raw/d4155e673d7908193eb65f9bb6640250d7f282d8/git-version.gradle'
 }
 
 subprojects {
