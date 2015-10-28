@@ -1,0 +1,14 @@
+apply plugin: 'com.android.library'
+
+android {
+
+	defaultConfig {
+		minSdkVersion 1
+	}
+
+	buildTypes {
+		release {
+			minifyEnabled false
+		}
+	}
+}
