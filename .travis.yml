@@ -1,0 +1,20 @@
+language: android
+jdk: oraclejdk8
+sudo: false
+android:
+  components:
+  - build-tools-23.0.1
+  - android-23
+script: "./gradlew build check"
+deploy:
+  provider: releases
+  api_key:
+    secure: Hiit0iruvmcUBtLHhA59bkWc40xXMGvQtJgFYvhdSDUFnHhaeRCV2rtQvshKB1sJqMUCr/mg8OHYOlq80EfnNFtIwwfQVaIlolcdGp0mTLN5CGu9d9tZwmMYpWabmX3dOyY0v/P4ozZY+Ll7jdbjYXgKiIkwQV2ZUItqaKTuZHhKMiIKPwLPCI2aI2tEuEc5JYiFBYUudPrC0EJKnTATNtOrieMcUeiHBTrn8V3bQ1m2DnAdCN8n3rLK7FgDjlpZvJY3MciIDLozWZQa8187LBPemrV+00TEk3z+yWmbZddh+nFKUcS985BSV7RMCR8deU0oyme9lS7A6ctN8gXl885h9iDM+sbG1xwWqxohLLdDzu9IJO37LeHWoo+4ReTRBrSVNexDse6Giqp2K3++SDrTVkdEQKZXGxzF5y51rs6Mx6pKDXMThStrUBRzuobO2/6CMPFDVxG81rlcW5hRIHtZ5B/ac8Eg2OKIUlHHYn1iiTJbljVQm7/7e3bFlJZGKTUURrt0OWlNouMcvX7BreTPDy5lI6Jk/gVzTY2PpcQGyJbZy4bNHRCdmEOoBlSamkvnB5lpVINUDDYfTkr4ArYL6nVz6Q2C9ujJpC/KWgb5CnRPBXrvcujUqHsQjhxnHK22L7qVbzY+Fdsm/K3w2qLCFAOJxKFLqhGuStVTziU=
+  file:
+    - material/build/outputs/aar/material.aar
+    - holo/build/outputs/aar/holo.aar
+  skip_cleanup: true
+  on:
+    repo: freefair/android-library
+    tags: true
+
