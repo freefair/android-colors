@@ -15,6 +15,6 @@ deploy:
     - holo/build/outputs/aar/holo.aar
   skip_cleanup: true
   on:
-    repo: freefair/android-library
+    repo: freefair/android-colors
     tags: true
 
