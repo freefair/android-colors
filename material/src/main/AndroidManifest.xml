@@ -1,12 +1,12 @@
 <manifest
-    package="io.freefair.android.materialcolors"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    package="io.freefair.android.colors.material"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <application
-        tools:ignore="UnusedAttribute"
         android:allowBackup="true"
-        android:fullBackupContent="true">
+        android:fullBackupContent="true"
+        tools:ignore="UnusedAttribute">
     </application>
 </manifest>
 
