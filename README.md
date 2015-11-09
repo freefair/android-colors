@@ -8,13 +8,13 @@ Available modules:
 ## How to include
 ```gradle
 repositories { 
-    //jcenter() or whatever
+    // ...
     maven { url "https://jitpack.io" }
 }
 dependencies {
-    compile 'com.github.freefair.android-colors:material:1.0.0-rc2'
+    compile 'io.freefair.android-colors:material:1.0.0'
     // or
-    compile 'com.github.freefair.android-colors:holo:1.0.0-rc2'
+    compile 'io.freefair.android-colors:holo:1.0.0'
 }
 ```
 
@@ -24,7 +24,7 @@ dependencies {
 <item name="colorPrimary">@color/material_indigo_500</item>
 ```
 ```xml
-<item name="colorPrimary">@color/holor_red_light</item>
+<item name="colorPrimary">@color/holo_red_light</item>
 ```
 ### Java
 ```java
