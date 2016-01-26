@@ -12,9 +12,9 @@ repositories {
     maven { url "https://jitpack.io" }
 }
 dependencies {
-    compile 'io.freefair.android-colors:material:1.0.0'
+    compile 'io.freefair.android-colors:material:1.1.0'
     // or
-    compile 'io.freefair.android-colors:holo:1.0.0'
+    compile 'io.freefair.android-colors:holo:1.1.0'
 }
 ```
 
