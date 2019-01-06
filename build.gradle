@@ -1,11 +1,11 @@
 buildscript {
     repositories {
-        jcenter()
+        mavenCentral()
         google()
         maven { url "https://plugins.gradle.org/m2/" }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.0'
+        classpath 'com.android.tools.build:gradle:3.2.1'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
         classpath 'io.freefair.gradle:android-gradle-plugins:3.1.1'
     }
@@ -13,7 +13,7 @@ buildscript {
 
 allprojects {
     repositories {
-        jcenter()
+        mavenCentral()
         google()
     }
     group = 'io.freefair'
@@ -25,13 +25,13 @@ subprojects {
     apply plugin: 'io.freefair.android-maven-jars'
 
     android {
-        compileSdkVersion 27
+        compileSdkVersion 28
 
         defaultConfig {
             versionCode 1
             versionName project.version
             minSdkVersion 1
-            targetSdkVersion 27
+            targetSdkVersion 28
         }
     }
 }
