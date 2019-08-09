@@ -5,9 +5,8 @@ buildscript {
         maven { url "https://plugins.gradle.org/m2/" }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.1'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
-        classpath 'io.freefair.gradle:android-gradle-plugins:3.2.1'
+        classpath 'com.android.tools.build:gradle:3.4.2'
+        classpath 'io.freefair.gradle:android-gradle-plugins:3.4.2.2'
     }
 }
 
@@ -17,13 +16,13 @@ allprojects {
         google()
         jcenter()
     }
-    group = 'io.freefair'
+    group = 'io.freefair.android-colors'
 }
 
 subprojects {
     apply plugin: 'com.android.library'
-    apply plugin: 'com.github.dcendents.android-maven'
     apply plugin: 'io.freefair.android-maven-jars'
+    apply plugin: 'io.freefair.android-maven-publish'
 
     android {
         compileSdkVersion 28
