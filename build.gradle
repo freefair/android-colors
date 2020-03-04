@@ -25,13 +25,13 @@ subprojects {
     apply plugin: 'io.freefair.android-maven-publish'
 
     android {
-        compileSdkVersion 28
+        compileSdkVersion 29
 
         defaultConfig {
             versionCode 1
             versionName project.version
             minSdkVersion 1
-            targetSdkVersion 28
+            targetSdkVersion 29
         }
     }
 }
