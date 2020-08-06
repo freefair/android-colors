@@ -6,7 +6,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.0.1'
-        classpath 'io.freefair.gradle:android-gradle-plugins:3.5.2.3'
+        classpath 'io.freefair.gradle:android-gradle-plugins:4.0.1'
     }
 }
 
