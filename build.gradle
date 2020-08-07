@@ -7,6 +7,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:4.0.1'
         classpath 'io.freefair.gradle:android-gradle-plugins:4.0.1'
+        classpath 'io.freefair.gradle:maven-plugin:5.1.1'
     }
 }
 
@@ -23,6 +24,7 @@ subprojects {
     apply plugin: 'com.android.library'
     apply plugin: 'io.freefair.android-maven-jars'
     apply plugin: 'io.freefair.android-maven-publish'
+    apply plugin: "io.freefair.maven-central.validate-poms"
 
     android {
         compileSdkVersion 29
@@ -32,6 +34,48 @@ subprojects {
             versionName project.version
             minSdkVersion 1
             targetSdkVersion 29
+        }
+    }
+
+    publishing {
+        publications.withType(MavenPublication) {
+            pom {
+                url = 'https://github.com/freefair/android-colors'
+                name = provider { project.description }
+                description = provider { project.description }
+                inceptionYear = '2015'
+                licenses {
+                    license {
+                        name = 'The MIT License'
+                        url = 'https://github.com/freefair/android-colors/blob/master/LICENSE'
+                    }
+                }
+                organization {
+                    name = 'FreeFair'
+                    url = 'https://github.com/freefair'
+                }
+                developers {
+                    developer {
+                        id = 'larsgrefer'
+                        name = 'Lars Grefer'
+                        email = 'github@larsgrefer.de'
+                        timezone = 'Europe/Berlin'
+                    }
+                }
+                ciManagement {
+                    system = 'Travis CI'
+                    url = 'https://travis-ci.org/freefair/android-colors/'
+                }
+                issueManagement {
+                    system = 'Github'
+                    url = 'https://github.com/freefair/android-colors/issues'
+                }
+                scm {
+                    connection = 'scm:git:https://github.com/freefair/android-colors.git'
+                    developerConnection = 'scm:git:git@github.com:freefair/android-colors.git'
+                    url = 'https://github.com/freefair/android-colors/'
+                }
+            }
         }
     }
 }

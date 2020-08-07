@@ -1,1 +1,3 @@
 apply plugin: 'com.android.library'
+
+description = "Android Material Color Resources"
