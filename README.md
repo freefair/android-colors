@@ -1,7 +1,6 @@
 # android-colors
 Color resources for your android project
 
-[![Build Status](https://travis-ci.org/freefair/android-colors.svg?branch=master)](https://travis-ci.org/freefair/android-colors)
 [![](https://jitpack.io/v/io.freefair/android-colors.svg)](https://jitpack.io/#io.freefair/android-colors)
 
 Available modules:

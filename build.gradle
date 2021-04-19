@@ -63,11 +63,11 @@ subprojects {
                     }
                 }
                 ciManagement {
-                    system = 'Travis CI'
-                    url = 'https://travis-ci.org/freefair/android-colors/'
+                    system = 'GitHub Actions'
+                    url = 'https://github.com/freefair/android-colors/actions'
                 }
                 issueManagement {
-                    system = 'Github'
+                    system = 'GitHub'
                     url = 'https://github.com/freefair/android-colors/issues'
                 }
                 scm {
