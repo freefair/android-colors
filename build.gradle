@@ -11,6 +11,10 @@ buildscript {
     }
 }
 
+plugins {
+    id "io.github.gradle-nexus.publish-plugin" version "1.1.0"
+}
+
 allprojects {
     repositories {
         mavenCentral()
@@ -22,7 +26,7 @@ allprojects {
 subprojects {
     apply plugin: 'com.android.library'
     apply plugin: 'io.freefair.android-maven-jars'
-    apply plugin: 'io.freefair.android-maven-publish'
+    apply plugin: 'maven-publish'
     apply plugin: "io.freefair.maven-central.validate-poms"
 
     android {
@@ -73,6 +77,18 @@ subprojects {
                     connection = 'scm:git:https://github.com/freefair/android-colors.git'
                     developerConnection = 'scm:git:git@github.com:freefair/android-colors.git'
                     url = 'https://github.com/freefair/android-colors/'
+                }
+            }
+        }
+    }
+
+    project.afterEvaluate {
+        publishing {
+            publications {
+                // Creates a Maven publication called "release".
+                release(MavenPublication) {
+                    // Applies the component for the release build variant.
+                    from components.release
                 }
             }
         }
