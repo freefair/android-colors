@@ -27,6 +27,7 @@ subprojects {
     apply plugin: 'com.android.library'
     apply plugin: 'io.freefair.android-maven-jars'
     apply plugin: 'maven-publish'
+    apply plugin: "signing"
     apply plugin: "io.freefair.maven-central.validate-poms"
 
     android {
@@ -82,6 +83,14 @@ subprojects {
         }
     }
 
+    signing {
+        required { !version.endsWith('SNAPSHOT') && gradle.taskGraph.hasTask("publish") }
+
+        def signingKey = findProperty("signingKey")
+        def signingPassword = findProperty("signingPassword")
+        useInMemoryPgpKeys(signingKey, signingPassword)
+    }
+
     project.afterEvaluate {
         publishing {
             publications {
@@ -93,4 +102,16 @@ subprojects {
             }
         }
     }
+}
+
+nexusPublishing {
+    repositories {
+        sonatype {
+            stagingProfileId = '7e6204597a774f'
+        }
+    }
+}
+
+tasks.named('wrapper') {
+    distributionType = Wrapper.DistributionType.ALL
 }
