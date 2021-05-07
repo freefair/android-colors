@@ -12,6 +12,7 @@ buildscript {
 }
 
 plugins {
+    id "io.freefair.git-version" version "5.3.3.3"
     id "io.github.gradle-nexus.publish-plugin" version "1.1.0"
 }
 
@@ -98,6 +99,8 @@ subprojects {
                 release(MavenPublication) {
                     // Applies the component for the release build variant.
                     from components.release
+
+                    signing.sign it
                 }
             }
         }
