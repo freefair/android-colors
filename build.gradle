@@ -2,17 +2,16 @@ buildscript {
     repositories {
         mavenCentral()
         google()
-        maven { url "https://plugins.gradle.org/m2/" }
+        gradlePluginPortal()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.2.2'
-        classpath 'io.freefair.gradle:android-gradle-plugins:4.2.0-m1'
-        classpath 'io.freefair.gradle:maven-plugin:5.3.3.3'
+        classpath 'com.android.tools.build:gradle:7.0.1'
+        classpath 'io.freefair.gradle:maven-plugin:6.1.0'
     }
 }
 
 plugins {
-    id "io.freefair.git-version" version "5.3.3.3"
+    id "io.freefair.git-version" version "6.1.0"
     id "io.github.gradle-nexus.publish-plugin" version "1.1.0"
 }
 
@@ -26,19 +25,18 @@ allprojects {
 
 subprojects {
     apply plugin: 'com.android.library'
-    apply plugin: 'io.freefair.android-maven-jars'
     apply plugin: 'maven-publish'
     apply plugin: "signing"
     apply plugin: "io.freefair.maven-central.validate-poms"
 
     android {
-        compileSdkVersion 29
+        compileSdkVersion 31
 
         defaultConfig {
             versionCode 1
             versionName project.version
             minSdkVersion 1
-            targetSdkVersion 29
+            targetSdkVersion 31
         }
     }
 
