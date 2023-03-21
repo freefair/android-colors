@@ -6,7 +6,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:7.4.2'
-        classpath 'io.freefair.gradle:maven-plugin:6.6.3'
+        classpath 'io.freefair.gradle:maven-plugin:8.0.1'
     }
 }
 
