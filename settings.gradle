@@ -1,2 +1,6 @@
+plugins {
+    id "io.freefair.settings.plugin-versions" version "8.2.2"
+}
+
 include ':material'
 include ':holo'
