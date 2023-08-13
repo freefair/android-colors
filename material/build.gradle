@@ -1,3 +1,7 @@
 apply plugin: 'com.android.library'
 
 description = "Android Material Color Resources"
+
+android {
+    namespace = "io.freefair.android.colors.material"
+}

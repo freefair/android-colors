@@ -1,3 +1,7 @@
 apply plugin: 'com.android.library'
 
 description = "Android Holo Color Resources"
+
+android {
+    namespace = "io.freefair.android.colors.holo"
+}
